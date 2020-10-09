@@ -1,0 +1,19 @@
+.input {
+  font-weight: 500;
+  padding: 7px 13px;
+  border: 1px solid #cacacd;
+  color: #898E93;
+  border-radius: 3px;
+  background: white;
+
+  &::placeholder {
+    color: #898E93;
+  }
+
+  &:focus {
+    border-color: #3E93FD;
+    outline-color: #E2E3EB;
+    outline-offset: 2px;
+    transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+  }
+}

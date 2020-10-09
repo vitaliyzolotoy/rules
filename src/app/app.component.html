@@ -1,0 +1,178 @@
+<form class="rules-form"
+      [formGroup]="formGroup"
+      (ngSubmit)="submitData(formGroup.value)"
+>
+  <h1 class="rules-form__title">
+    Display Rules
+  </h1>
+  <div class="rules-form__item">
+    <h2 class="rules-form__subtitle">
+      Inclusion Rules
+    </h2>
+    <p class="rules-form__desc">
+      Where would you like to display your campaign?
+    </p>
+    <section class="rules-form__section">
+      <div class="rules-form__section-inner"
+                    formArrayName="inclusion"
+                    *ngFor="let item of formGroup.get('inclusion')['controls']; let id = index;"
+      >
+        <ng-container [formGroupName]="id">
+          <span *ngIf="!isFirstEntry(id)"
+                class="rules-form__or"
+          >
+            or
+          </span>
+          <select name="page"
+                  formControlName="page"
+                  (change)="manageVisibility('inclusion', id)"
+                  class="rules-form__select select"
+          >
+            <option value="all"
+                    selected
+            >
+              All Pages
+            </option>
+            <option value="home">
+              Home Pages
+            </option>
+            <option value="product">
+              Product Pages
+            </option>
+            <option value="password">
+              Password Page
+            </option>
+            <option value="custom">
+              Custom
+            </option>
+          </select>
+          <select name="contains"
+                  formControlName="contains"
+                  class="rules-form__select select"
+          >
+            <option value="contains"
+                    selected
+            >
+              Contains
+            </option>
+            <option value="exect">
+              Exact match
+            </option>
+          </select>
+          <div class="rules-form__url">
+            <input type="text"
+                   placeholder="Type a full or partial URL"
+                   class="rules-form__input input"
+                   formControlName="url"
+            >
+            <span *ngIf="isErrorVisible('inclusion', 'required', id)"
+                  class="rules-form__error"
+            >
+            URL is missing
+          </span>
+          </div>
+          <span (click)="deleteEntry('inclusion', id)"
+                class="rules-form__remove"
+                *ngIf="!isFirstEntry(id)"
+          >
+            x
+          </span>
+        </ng-container>
+      </div>
+    </section>
+    <button class="rules-form__button button"
+            type="button"
+            (click)="addEntry('inclusion', formGroup.get('inclusion')['controls'].length)"
+    >
+      <span>
+        +
+      </span>
+      New Rule
+    </button>
+  </div>
+  <div class="rules-form__item">
+    <h2 class="rules-form__subtitle">
+      Exclusion Rules
+    </h2>
+    <p class="rules-form__desc">
+      Where would you like to NOT display your campaign?
+    </p>
+    <section class="rules-form__section">
+      <div class="rules-form__section-inner"
+                    formArrayName="exclusion"
+                    *ngFor="let item of formGroup.get('exclusion')['controls']; let id = index;"
+      >
+        <ng-container [formGroupName]="id">
+          <span *ngIf="!isFirstEntry(id)"
+                class="rules-form__or"
+          >
+            or
+          </span>
+          <select name="page"
+                  formControlName="page"
+                  (change)="manageVisibility('exclusion', id)"
+                  class="rules-form__select select"
+          >
+            <option value="all"
+                    selected
+            >
+              All Pages
+            </option>
+            <option value="home">
+              Home Pages
+            </option>
+            <option value="product">
+              Product Pages
+            </option>
+            <option value="password">
+              Password Page
+            </option>
+            <option value="custom">
+              Custom
+            </option>
+          </select>
+          <select name="contains"
+                  formControlName="contains"
+                  class="rules-form__select select"
+          >
+            <option value="contains"
+                    selected
+            >
+              Contains
+            </option>
+            <option value="exect">
+              Exact match
+            </option>
+          </select>
+          <div class="rules-form__url">
+            <input type="text"
+                   placeholder="Type a full or partial URL"
+                   class="rules-form__input input"
+                   formControlName="url"
+            >
+            <span *ngIf="isErrorVisible('exclusion', 'required', id)"
+                  class="rules-form__error"
+            >
+            URL is missing
+          </span>
+          </div>
+          <span (click)="deleteEntry('exclusion', id)"
+                class="rules-form__remove"
+                *ngIf="!isFirstEntry(id)"
+          >
+            x
+          </span>
+        </ng-container>
+      </div>
+    </section>
+    <button class="rules-form__button button"
+            type="button"
+            (click)="addEntry('exclusion', formGroup.get('exclusion')['controls'].length)"
+    >
+      <span>
+        +
+      </span>
+      New Rule
+    </button>
+  </div>
+</form>
