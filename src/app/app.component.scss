@@ -63,11 +63,6 @@
     margin: 1.14rem;
   }
 
-  &__select {
-    width: 14.28rem;
-    margin-right: 1.42rem;
-  }
-
   &__input {
     width: 20rem;
     margin-right: 1.42rem;
@@ -100,6 +95,7 @@
   }
 }
 
-[disabled] {
+[disabled],
+[disabled] + .select__icon {
   display: none;
 }

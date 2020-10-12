@@ -23,42 +23,48 @@
           >
             or
           </span>
-          <select name="page"
-                  formControlName="page"
-                  (change)="manageVisibility('inclusion', id)"
-                  class="rules-form__select select"
-          >
-            <option value="all"
-                    selected
+          <span class="rules-form__select select">
+            <select name="page"
+                    formControlName="page"
+                    (change)="manageVisibility('inclusion', id)"
+                    class="select__input"
             >
-              All Pages
-            </option>
-            <option value="home">
-              Home Pages
-            </option>
-            <option value="product">
-              Product Pages
-            </option>
-            <option value="password">
-              Password Page
-            </option>
-            <option value="custom">
-              Custom
-            </option>
-          </select>
-          <select name="contains"
-                  formControlName="contains"
-                  class="rules-form__select select"
-          >
-            <option value="contains"
-                    selected
+              <option value="all"
+                      selected
+              >
+                All Pages
+              </option>
+              <option value="home">
+                Home Pages
+              </option>
+              <option value="product">
+                Product Pages
+              </option>
+              <option value="password">
+                Password Page
+              </option>
+              <option value="custom">
+                Custom
+              </option>
+            </select>
+            <span class="select__icon">⌄</span>
+          </span>
+          <span class="rules-form__select select">
+            <select name="contains"
+                    formControlName="contains"
+                    class="select__input"
             >
-              Contains
-            </option>
-            <option value="exect">
-              Exact match
-            </option>
-          </select>
+              <option value="contains"
+                      selected
+              >
+                Contains
+              </option>
+              <option value="exect">
+                Exact match
+              </option>
+            </select>
+            <span class="select__icon">⌄</span>
+          </span>
           <div class="rules-form__url">
             <input type="text"
                    placeholder="Type a full or partial URL"
@@ -108,42 +114,48 @@
           >
             or
           </span>
-          <select name="page"
-                  formControlName="page"
-                  (change)="manageVisibility('exclusion', id)"
-                  class="rules-form__select select"
-          >
-            <option value="all"
-                    selected
+          <span class="rules-form__select select">
+            <select name="page"
+                    formControlName="page"
+                    (change)="manageVisibility('exclusion', id)"
+                    class="select__input"
             >
-              All Pages
-            </option>
-            <option value="home">
-              Home Pages
-            </option>
-            <option value="product">
-              Product Pages
-            </option>
-            <option value="password">
-              Password Page
-            </option>
-            <option value="custom">
-              Custom
-            </option>
-          </select>
-          <select name="contains"
-                  formControlName="contains"
-                  class="rules-form__select select"
-          >
-            <option value="contains"
-                    selected
+              <option value="all"
+                      selected
+              >
+                All Pages
+              </option>
+              <option value="home">
+                Home Pages
+              </option>
+              <option value="product">
+                Product Pages
+              </option>
+              <option value="password">
+                Password Page
+              </option>
+              <option value="custom">
+                Custom
+              </option>
+            </select>
+            <span class="select__icon">⌄</span>
+          </span>
+          <span class="rules-form__select select">
+            <select name="contains"
+                    formControlName="contains"
+                    class="select__input"
             >
-              Contains
-            </option>
-            <option value="exect">
-              Exact match
-            </option>
-          </select>
+              <option value="contains"
+                      selected
+              >
+                Contains
+              </option>
+              <option value="exect">
+                Exact match
+              </option>
+            </select>
+            <span class="select__icon">⌄</span>
+          </span>
           <div class="rules-form__url">
             <input type="text"
                    placeholder="Type a full or partial URL"

@@ -11,9 +11,10 @@
   }
 
   &:focus {
+    border-radius: 3px;
     border-color: #3E93FD;
-    outline-color: #E2E3EB;
-    outline-offset: 2px;
+    outline: 2px solid #E2E3EB;
+    outline-offset: 1px;
     transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
   }
 }

@@ -1,15 +1,32 @@
 .select {
-  font-weight: 500;
-  padding: .42rem .92rem;
-  border: 1px solid #cacacd;
-  color: #898E93;
-  border-radius: .21rem;
-  background: white;
+  position: relative;
 
-  &:focus {
+  &__input {
+    font-weight: 500;
+    width: 14rem;
+    margin-right: 1.42rem;
+    padding: .42rem .92rem;
+    border: 1px solid #cacacd;
+    color: #898E93;
+    border-radius: .21rem;
+    background: white;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  &__input:focus {
+    border-radius: 3px;
     border-color: #3E93FD;
-    outline-color: #E2E3EB;
-    outline-offset: 2px;
+    outline: 2px solid #E2E3EB;
+    outline-offset: 1px;
     transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+  }
+
+  &__icon {
+    font-size: 2rem;
+    line-height: 1rem;
+    position: absolute;
+    top: .21rem;
+    right: 2rem;
   }
 }
