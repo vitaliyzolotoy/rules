@@ -1,6 +1,6 @@
 @keyframes scale {
   0% {
-    transform: scale(0.8) rotateX(-40deg)
+    transform: scale(.8) rotateX(-40deg)
   }
 
   50% {
@@ -18,21 +18,21 @@
 
 .button {
   font-weight: 500;
-  padding: 9px 13px;
+  padding: .64rem .92rem;
   text-transform: uppercase;
   border: 2px solid #A8BBD4;
-  border-radius: 2px;
+  border-radius: .21rem;
   background: white;
-  transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+  transition: all 0.2s cubic-bezier(0, 0, .58, 1);
   outline: none;
 
   span {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   &:active {
     border: transparent;
     background:#E2E3EB;
-    animation: scale 300ms cubic-bezier(0.8, 0.02, 0.45, 0.91);
+    animation: scale 300ms cubic-bezier(.8, .02, .45, .91);
   }
 }
